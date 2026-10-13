@@ -70,3 +70,9 @@ npm test --prefix ~/.codex/skills/minimax-mac-gpu/runtime/h3-community-cloud/run
 ## 来源说明
 
 官方资料只用于确认模型能力；Emily2040、LeonSooLab、jeurtr 等仓库属于社区来源；ByteDance AgentKit 中的 Seedance 文件是官方组织仓库里的特定广告复刻示例，不是通用官方导演手册。
+
+## 汽车看板与原视频车辆替换
+
+[zqhd-car-modelvideo](zqhd-car-modelvideo/SKILL.md) 将车辆参考资产制作与视频车辆替换合并为一个技能：先制作完整八视图和单张细节约束图，再询问只保留两张图还是继续视频替换。选择替换时，确认看板后索取原视频，默认保留背景、时长、构图、运镜及动作时间。
+
+安装：将本仓库 `zqhd-car-modelvideo` 整个目录复制到 `~/.codex/skills/`。调用 `$zqhd-car-modelvideo`，先上传同一台车的多角度照片。图片生成需当前环境的 imagegen 能力；排版需 Python/Pillow，PNG 导出需已有 Playwright 与浏览器。视频分支需相应 LibTV 或本机 H3 技能与已授权的平台能力；本目录不附模型权重或平台凭据。
