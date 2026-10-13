@@ -2,7 +2,7 @@
 
 这里提供彼此独立的中文视频 Skill：
 
-- [zqhd-car-modelvideo](zqhd-car-modelvideo/SKILL.md)：上传实车照片，制作并确认汽车八视图和细节约束图；再选择只保留两张图或继续车辆替换。选择替换后才索取原视频，保持原背景、时长、构图和运镜。
+- [zqhd-car-modelvideo](zqhd-car-modelvideo/SKILL.md)：上传实车照片，制作并确认汽车八视图和细节约束图；再选择只保留两张图或继续车辆替换。选择替换后先询问 Seedance 或 MiniMax，调用 zqhd-video-ai 按所选模型规范输出完整提示词，保持原背景、时长、构图和运镜。
 
 - seedance-20：Seedance 2.0 的多模态参考、首尾帧、汽车外观/内饰一致性、镜头和连续分镜。
 - seedance-25：Seedance 2.5 的长叙事、延长、时间戳编辑、绿幕、白模/黏土参考和汽车时间轴。
@@ -75,6 +75,6 @@ npm test --prefix ~/.codex/skills/minimax-mac-gpu/runtime/h3-community-cloud/run
 
 ## 汽车看板与原视频车辆替换
 
-[zqhd-car-modelvideo](zqhd-car-modelvideo/SKILL.md) 将车辆参考资产制作与视频车辆替换合并为一个技能：先制作完整八视图和单张细节约束图，再询问只保留两张图还是继续视频替换。选择替换时，确认看板后索取原视频，默认保留背景、时长、构图、运镜及动作时间。
+[zqhd-car-modelvideo](zqhd-car-modelvideo/SKILL.md) 将车辆参考资产制作与视频车辆替换合并为一个技能：先制作完整八视图和单张细节约束图，再询问只保留两张图还是继续视频替换。选择替换时，确认看板并前置选择 Seedance 或 MiniMax；使用 zqhd-video-ai 的对应模型规范输出完整提示词。Seedance 先确认 2.0/2.5，按八段结构输出；MiniMax H3 按实际模式输出，Ref2VA 使用六段。随后按已有生成授权执行，默认保留背景、时长、构图、运镜及动作时间。
 
 安装：将本仓库 `zqhd-car-modelvideo` 整个目录复制到 `~/.codex/skills/`。调用 `$zqhd-car-modelvideo`，先上传同一台车的多角度照片。图片生成需当前环境的 imagegen 能力；排版需 Python/Pillow，PNG 导出需已有 Playwright 与浏览器。视频分支需相应 LibTV 或本机 H3 技能与已授权的平台能力；本目录不附模型权重或平台凭据。
