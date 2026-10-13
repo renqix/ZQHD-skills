@@ -2,6 +2,8 @@
 
 这里提供彼此独立的中文视频 Skill：
 
+- [zqhd-car-modelvideo](zqhd-car-modelvideo/SKILL.md)：上传实车照片，制作并确认汽车八视图和细节约束图；再选择只保留两张图或继续车辆替换。选择替换后才索取原视频，保持原背景、时长、构图和运镜。
+
 - seedance-20：Seedance 2.0 的多模态参考、首尾帧、汽车外观/内饰一致性、镜头和连续分镜。
 - seedance-25：Seedance 2.5 的长叙事、延长、时间戳编辑、绿幕、白模/黏土参考和汽车时间轴。
 - h3-prompt-writing：MiniMax H3 的 T2VA/I2VA/FL2VA/L2VA/Ref2VA 通用提示词编排。
