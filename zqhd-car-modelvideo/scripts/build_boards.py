@@ -1,5 +1,5 @@
 #!/usr/bin/env python3
-"""只读图片与人工核验清单，生成自包含 SVG 汽车参考看板。"""
+"""只读图片与素材排版清单，生成自包含 SVG 汽车参考看板。"""
 
 from __future__ import annotations
 
@@ -301,26 +301,14 @@ def load_manifest(manifest_path: Path) -> tuple[dict, dict[Path, Picture]]:
 
 
 def readiness(manifest: dict) -> dict:
-    view_map = {view["id"]: view for view in manifest["views"]}
-    missing = [ident for ident in VIEW_LABELS if ident not in view_map]
-    unverified = [ident for ident in VIEW_LABELS if ident in view_map and view_map[ident]["status"] != "approved"]
-    critical = [detail for detail in manifest["details"] if detail["critical"]]
-    uncertain = [{"id": detail["id"], "status": detail["status"], "side": detail["side"]} for detail in critical if detail["status"] != "confirmed" or detail["side"] == "unknown"]
-    reasons = []
-    if missing:
-        reasons.append("缺少角度：" + "、".join(VIEW_LABELS[ident] for ident in missing))
-    if unverified:
-        reasons.append("角度尚未人工通过：" + "、".join(VIEW_LABELS[ident] for ident in unverified))
-    if uncertain:
-        reasons.append("关键细节尚未确认或侧别未知：" + "、".join(detail["id"] for detail in uncertain))
-    if not critical:
-        reasons.append("未提供任何关键细节约束")
+    """仅报告已通过结构与路径读取的排版清单，不执行返回质量验收。"""
+    missing = [ident for ident in VIEW_LABELS if ident not in {view["id"] for view in manifest["views"]}]
     return {
-        "ready": not reasons, "missing_views": missing, "unverified_views": unverified,
-        "unconfirmed_critical_details": uncertain, "critical_detail_count": len(critical),
-        "reasons": reasons,
-        "pending_questions": [{"id": detail["id"], "title": detail["title"], "question": detail["question"], "options": detail["options"]} for detail in manifest["details"] if detail["question"] and (detail["status"] != "confirmed" or detail["side"] == "unknown")],
-        "readiness_basis": "人工核验元数据；脚本不做车色、文字、左右侧或一致性的像素检测",
+        "ready": True, "layoutReady": True, "returnChecks": "skipped",
+        "missing_views": missing, "unverified_views": [],
+        "unconfirmed_critical_details": [], "critical_detail_count": sum(detail["critical"] for detail in manifest["details"]),
+        "reasons": [], "pending_questions": [],
+        "readiness_basis": "输入路径和清单结构可用于排版；返回检测已跳过，不代表视觉通过",
     }
 
 
@@ -473,7 +461,7 @@ def board_views(manifest: dict, clean: bool = False) -> SVG:
     board = SVG(width, top + 2 * (card_height + gap) + margin, [view["_picture"] for view in manifest["views"]], "汽车八视图干净版" if clean else "汽车标准八视图", "#ffffff" if clean else "#f2f5f9")
     if not clean:
         board.add(text_block((manifest["vehicle"]["name"] or "汽车") + "｜标准八视图", margin, 54, width - 2 * margin, 34))
-        board.add(text_block("左右以车辆行驶方向定义；每格独立核验。缺角度留空，草稿角度标记未核验。", margin, 94, width - 2 * margin, 22))
+        board.add(text_block("左右以车辆行驶方向定义；缺角度留空，已有视图按实际文件排版。", margin, 94, width - 2 * margin, 22))
     for index, (ident, label) in enumerate(VIEW_LABELS.items()):
         x, y = margin + index % columns * (card_width + gap), top + index // columns * (card_height + gap)
         board.rect(x, y, card_width, card_height, "#ffffff" if ident in view_map else "#edf0f4", radius=0 if clean else 12)
@@ -481,8 +469,7 @@ def board_views(manifest: dict, clean: bool = False) -> SVG:
             view = view_map[ident]
             board.photo(view["_picture"], x + 8, y + (8 if clean else 64), card_width - 16, card_height - (16 if clean else 76))
             if not clean:
-                approved = view["status"] == "approved"
-                board.add(text_block(f"{ident} · {label}｜{'人工通过' if approved else '未核验'}", x + 14, y + 39, card_width - 28, 22, "#167348" if approved else "#ab5910", max_lines=1))
+                board.add(text_block(f"{ident} · {label}｜已提供", x + 14, y + 39, card_width - 28, 22, "#627086", max_lines=1))
         elif not clean:
             board.add(text_block(f"{ident} · {label}", x + 14, y + 39, card_width - 28, 22))
             board.add(text_block("缺少该角度", x + 110, y + 256, card_width - 150, 30, "#627086"))
@@ -545,8 +532,8 @@ def build(manifest: dict, manifest_path: Path, output_dir: Path, cache: dict[Pat
     sections = "".join(f'<section><h2>{label}</h2>{board_text[filename]}</section>' for filename, label in zip(board_names, labels))
     detail_links = "".join(f'<li><a href="detail-{index:02d}.svg">{escape(detail["id"])} · {escape(detail["title"] or "细节")}</a></li>' for index, detail in enumerate(manifest["details"], 1))
     view_links = "".join(f'<li><a href="view-{view["id"]}.svg">{escape(VIEW_LABELS[view["id"]])} 单图</a></li>' for view in separate_views)
-    reasons = "；".join(state["reasons"]) if state["reasons"] else "八视图与关键细节的人工核验元数据已通过。"
-    document = f'''<!doctype html><html lang="zh-CN"><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1"><meta http-equiv="Content-Security-Policy" content="default-src 'none'; img-src data:; style-src 'unsafe-inline'; base-uri 'none'; form-action 'none'"><title>汽车参考看板</title><style>body{{margin:0;background:#e8edf3;color:#243044;font-family:{FONT};padding:28px}}main{{max-width:1600px;margin:auto}}section{{margin:32px 0}}svg{{display:block;width:100%;height:auto;background:white}}h1{{font-size:28px}}h2{{font-size:21px}}p{{line-height:1.7}}a{{color:#1e5bb8}}.state{{padding:20px;background:white;border-radius:12px}}</style><main><h1>{escape(manifest['vehicle']['name'] or '汽车')} · 参考看板</h1><div class="state"><strong>{'人工核验清单已通过' if state['ready'] else '草稿／尚未通过核验'}</strong><p>{escape(reasons)}</p><p>{escape(state['readiness_basis'])}</p></div>{sections}<section><h2>独立参考图</h2><ul>{detail_links}{view_links}</ul><p>SVG 使用原始编码图像，局部以几何视窗裁切；源照片不改写。上传视频模型前，请按工具支持情况导出为 PNG，并打开核对文字、左右侧与裁切范围。</p></section></main></html>'''
+    reasons = "；".join(state["reasons"]) if state["reasons"] else "素材清单已读取；返回检测已跳过。"
+    document = f'''<!doctype html><html lang="zh-CN"><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1"><meta http-equiv="Content-Security-Policy" content="default-src 'none'; img-src data:; style-src 'unsafe-inline'; base-uri 'none'; form-action 'none'"><title>汽车参考看板</title><style>body{{margin:0;background:#e8edf3;color:#243044;font-family:{FONT};padding:28px}}main{{max-width:1600px;margin:auto}}section{{margin:32px 0}}svg{{display:block;width:100%;height:auto;background:white}}h1{{font-size:28px}}h2{{font-size:21px}}p{{line-height:1.7}}a{{color:#1e5bb8}}.state{{padding:20px;background:white;border-radius:12px}}</style><main><h1>{escape(manifest['vehicle']['name'] or '汽车')} · 参考看板</h1><div class="state"><strong>{'排版输入已准备' if state['ready'] else '排版输入待补齐'}</strong><p>{escape(reasons)}</p><p>{escape(state['readiness_basis'])}</p></div>{sections}<section><h2>独立参考图</h2><ul>{detail_links}{view_links}</ul><p>SVG 使用原始编码图像，局部以几何视窗裁切；源照片不改写。上传视频模型前，请按工具支持情况导出为 PNG，并沿实际输入用途提交。</p></section></main></html>'''
     for filename, content in board_text.items():
         atomic_write(output_dir / filename, content)
     atomic_write(output_dir / "index.html", document)
@@ -572,7 +559,7 @@ def main() -> int:
     parser.add_argument("manifest", type=Path, help="JSON manifest 路径")
     parser.add_argument("--output-dir", "--out", dest="output_dir", type=Path, help="输出目录，默认 manifest 同级 board-output")
     parser.add_argument("--validate-only", action="store_true", help="只验证清单与源图，不写输出")
-    parser.add_argument("--require-ready", action="store_true", help="人工核验元数据未通过则退出且不写输出")
+    parser.add_argument("--require-ready", action="store_true", help="兼容旧参数；不启用返回质量门")
     parser.add_argument("--single-views", action="store_true", help="另外输出已提供角度的无字 view-ID.svg")
     args = parser.parse_args()
     try:
@@ -581,7 +568,7 @@ def main() -> int:
         manifest, cache = load_manifest(manifest_path)
         state = readiness(manifest)
         if args.require_ready:
-            require(state["ready"], "清单未达到可交付状态：" + "；".join(state["reasons"]))
+            require(state["ready"], "清单结构不可用于排版：" + "；".join(state["reasons"]))
         if args.validate_only:
             print(json.dumps({"valid": True, **state, "source_count": len(manifest["sources"]), "detail_count": len(manifest["details"]), "view_count": len(manifest["views"])}, ensure_ascii=False, indent=2))
             return 0

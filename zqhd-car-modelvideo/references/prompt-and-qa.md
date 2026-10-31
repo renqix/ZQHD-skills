@@ -1,61 +1,44 @@
-# 原片车辆替换的提示词与验收
+# 原片车辆替换的提示词与交付
 
-此文件在编译实际提示词或检查成片时读取，不代替平台技能和模型当前 schema。
+本文件只把已核验的车辆素材映射到所选模型，不再维护第二套比例、保留或交付规则。替换语义沿[唯一合同](../../zqhd-video-ai/components/workflow/references/subject-replacement.md)，车辆细节沿[车辆规则](../../zqhd-video-ai/references/vehicle-core.md)；同轮已读即复用。
 
-## 素材合同
+## 素材和路由
 
-- 原始视频：镜头、空间、背景、运动和时间的最高依据。它既是编辑源，也是对照验收的母片。
-- 已确认八视图：目标车辆身份、各角度几何、漆色及附件。
-- 已确认细节板：真实物理侧别、贴纸/文字/车标/轮毂及其它保持条件。看板背景、格线和标注不进入成片。
-- 照片和看板中静态灯轮状态不能自动覆盖用户的阶段要求；原视频中的错误或用户明确纠正的状态须独立写成局部例外。
+按实际输入固定：原视频负责镜头、场景、动作和时间；整体图负责完整目标车形体；细节图补局部。不虚构第二张图或Audio标签，不拿旧片失败画面做新车外观正向参考。已有本次模型/素材/生成授权直接沿用，未选定且影响路由时才询问。仅写词不上传、不生成。
 
-## 模型路由与输出
+- H3 使用[共享格式契约](../../zqhd-video-ai/components/h3/references/prompt-contract.md)；Ref2VA保留以下六段，首次/有歧义时再核对官方原文。
+- Seedance 按已选2.0/2.5及其真实入口，不套H3六段、标签或另一版本参数。
 
-先在主流程中确认 Seedance 或 MiniMax；未选定不默认 H3。提示词必须通过当前安装的 `zqhd-video-ai` 对应模型指南编写。
+## H3 Ref2VA 填写框架
 
-- MiniMax H3：下面的六段框架仅适用于 Ref2VA；先读该技能的 H3 指南及对应官方原文。
-- Seedance：确认 2.0/2.5 后只读所选版本边界与汽车规则，输出版本与工作流、路由理由与边界、车辆身份卡、参考素材合同、[Positive]、[Negative]、平台参数、验收与下一步八段。不得套用下方 H3 字段、素材标签或另一版 Seedance 参数。
-- 两种模型都完整保留本文件的素材合同和同时刻验收要求，输出可复制的完整正文；仅写提示词不生成。
-
-## H3 六段编译框架（仅 MiniMax Ref2VA）
-
-只填入已查看、真实上传的素材、时长和事件，不把此框架未替换的文字提交给模型。英文模型描述，画面文字保留原文；素材顺序改变后重新编号。按 `zqhd-video-ai` 读取当前 Ref2VA 正文规范，保留完整六段。源音默认后期复制，不凭视频带声音就虚构 Audio 标签。
+下例只有本次存在相应素材时才填写；替换占位内容后交付完整中文正文。具体形体与完整替换要写清，但不把编译规则全文复制进正文。
 
 ```text
 subject_definitions:
-<Subject 1> is the confirmed target vehicle in <Picture 1>, with exact side-specific details defined by <Picture 2>: [visible confirmed identity and details].
-<Video 1> is the original video to edit, defining camera projection, background, foreground occlusion, vehicle motion and the complete [actual source duration]-second timeline.
+<Subject 1> 是 <Picture 1> 中的完整目标车辆：[本次可见的车身形式、车顶/座舱/尾部和部件关系]；<Picture 2> 仅补充[真实局部用途，有图才保留]。
+<Video 1> 是原视频编辑源，负责[实际场景、相机、动作和时间]，不提供目标车外观。
 
 summary:
-[video editing + reference generation] The target video is an edited version of <Video 1>. Replace only [identified source vehicle] with <Subject 1>. Retain the complete source timeline, background sequence, camera and motion. [Explicit user exceptions, if any.]
+[video editing + reference generation] 在[用户指定的完整时间范围]，完整移除[原片唯一旧车]并换入同一台<Subject 1>；新车从首次出现到最后出现始终一致，不保留旧车再渐变，不只换表面或零件。其余内容沿原片及用户明确例外。
 
 retention_analysis:
-<Subject 1> (appears in [actual shots]): fully_preserved - [confirmed geometry, paint and details].
-<Video 1> (appears in [actual shots]): partially_preserved - only the identified vehicle appearance and listed exceptions change; all other visible content and event timing are retained.
+<Subject 1> (appears in [实际镜头范围]): fully_preserved - [具体目标形体、身份与关键部件关系]。
+<Video 1> (appears in [实际镜头范围]): partially_preserved - 保留[实际空间、动作、镜头和时间]；旧车身份与完整形体被替换，不继承其轮廓或部件坐标。
 
 detailed_description:
-[Actual original shot sequence with original cut timestamps.] Match the source vehicle's position, scale, orientation, tire contact, motion and occlusion at each time. [Explicit source-derived phases and light/wheel states.] Preserve the source camera height, projection, movement and speed profile. [Correct side-specific details.] Do not add an orbit, low-angle sweep, shot, duplicated car or mirrored body graphics. Do not render board labels or arrows.
+[Shot 1] [原片初始状态，出现时即为完整新车，动作与运镜]。
+[Shot N] At [实际切点], [同一完整新车的当前状态、实际动作、接触与原运镜；只补本镜必要变化，不重抄全套身份]。
+[其余实际镜头与已确认尾部处理，不另造镜头或动作。]
 
 overall_soundscape:
-[Requested audible environment; original audio is restored in post when preservation is required.]
+[实际声音方案；原音要求后期回填时如实写明，不虚构独立音轨输入。]
 
 non_diegetic_music:
-[Requested music layer or N/A; do not invent new music.]
+[实际约定的配乐或N/A，不凭空新增。]
 ```
 
-将重要动作条件写成清楚的起点与终点，例如“窗台阶段轮辐固定，只有轮胎接触真实道路才开始滚动”，而不是只写“车轮自然”。原视频没有该情节时不添加这种阶段。照明变化允许改变车漆反射和明暗，不允许把银蓝底漆变成另一颜色。
+新车按原场景等比适配，阴影/倒影跟随新形体；通用几何细节不在此重复。对超限稿按[入口长度规则](../../zqhd-video-ai/components/workflow/references/prompt-authoring-and-limits.md)同义合并，保留具体形体与全部替换范围，不能只剩“按图保持”。
 
-## 同时刻验收
+## 交付
 
-以原片实际切点和状态变化建立检查时间点，另外覆盖首中尾。密集检查遮挡、跨场景和比例变化的前后；轮辐状态用连续帧比较，不能凭一张轮毂截图判断静止。
-
-| 检查 | 通过依据 | 常见未达标 |
-| --- | --- | --- |
-| 原时长与节奏 | 探测实际时长并对照事件时间，不仅看提交参数 | 对齐帧造成超长、全段变速、遗漏尾段 |
-| 背景 | 同时间点背景、前景遮挡、光照和场景顺序对应 | 跳过隧道/车厢、重绘成另一城市、提前上路 |
-| 相机 | 原机位、投影、地平线、运动轨迹一致 | 新增环绕/低角度/切镜、穿窗、方向反转 |
-| 身份 | 按确认看板逐面检查，左右分别核验 | 图案镜像、贴错侧、附件变形、漆色漂移 |
-| 灯轮 | 状态及变化时刻匹配合同，轮辐/接触连续 | 窗台轮转、灯提前点亮、轮胎打滑、车悬浮 |
-| 原音 | 实际源音轨合成与起止同步可核验 | 使用生成音轨却称原声保留 |
-
-记录“技术通过”“抽样视觉通过”“全段视觉/音频未覆盖”各自范围；不将尺寸、下载或一次截图当成所有项目通过。
+保留原稿、实际提交稿、素材顺序、回执及未核验项。返回沿[统一交付规则](../../zqhd-video-ai/components/workflow/references/return-delivery.md)执行；用户明确要求诊断时，沿[问题诊断路径](../../zqhd-video-ai/components/workflow/references/subject-replacement.md#交付与指定问题诊断)对照同一时间的输入与结果，不以文件可读替代效果结论。

@@ -1,0 +1,4 @@
+interface:
+  display_name: "Seedance Video 统一入口"
+  short_description: "自动路由 2.0/2.5，严格隔离版本参数"
+  default_prompt: "使用 Seedance 统一入口：先判断 2.0 或 2.5，再输出版本隔离的提示词、汽车一致性约束和验收清单。"

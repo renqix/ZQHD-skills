@@ -1,4 +1,4 @@
 interface:
-  display_name: "zqhd-car-modelvideo · 车辆多视图与视频翻拍"
-  short_description: "先做车辆参考图，替换视频前选择 Seedance 或 MiniMax 并按规范写词"
-  default_prompt: "使用 $zqhd-car-modelvideo，根据我上传的实车照片制作八视图和细节约束图，请我确认，再问我只保留两张图还是继续视频替换；选择替换后先问我使用 Seedance 还是 MiniMax，再调用 $zqhd-video-ai 按对应规范输出完整提示词，保持原背景、时长和运镜。"
+  display_name: "zqhd-car-modelvideo · 车辆看板与视频替车"
+  short_description: "先用实车照片做两张看板并请用户确认，再选 Seedance 或 MiniMax 按规范写词"
+  default_prompt: "使用 $zqhd-car-modelvideo，根据我上传的实车照片制作八视图和细节约束图并请我确认，再问我只保留两张图还是继续替换视频车辆；选择替换后先问我用 Seedance 还是 MiniMax，再调用 $zqhd-video-ai 输出完整提示词，保持原背景、时长与运镜。"

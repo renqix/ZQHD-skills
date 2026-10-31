@@ -1,0 +1,540 @@
+{
+  "schema_version": 1,
+  "snapshot_date": "2026-10-31",
+  "model_sources_checked_on": "2026-10-30",
+  "skills": [
+    "zqhd-video-ai",
+    "zqhd-car-modelvideo",
+    "seedance-20",
+    "seedance-25"
+  ],
+  "records": [
+    {
+      "path": "zqhd-video-ai/SKILL.md",
+      "source": "zqhd-video-ai/SKILL.md",
+      "source_sha256": "fe905eaeb506eb3388506e039cf9ca38d883596898035588a2f6191c805d2fdb",
+      "published_sha256": "1c9876a7ec64cf63e44458d01e87c13c614836d538deebe383a99083af1b7fb5",
+      "transformations": [
+        "resolve_optional_execution_skills_by_installed_name"
+      ]
+    },
+    {
+      "path": "zqhd-video-ai/agents/openai.yaml",
+      "source": "zqhd-video-ai/agents/openai.yaml",
+      "source_sha256": "04bb45b558e76733564a419d72b5dc9ddbd1708cda74d27ea89da2aa0b2e03a4",
+      "published_sha256": "04bb45b558e76733564a419d72b5dc9ddbd1708cda74d27ea89da2aa0b2e03a4",
+      "transformations": []
+    },
+    {
+      "path": "zqhd-video-ai/components/h3/guide.md",
+      "source": "zqhd-video-ai/components/h3/guide.md",
+      "source_sha256": "7cbe6faa464666cafc47512f8897b17d80ccb15470037a88e45eff868abc7c7e",
+      "published_sha256": "7cbe6faa464666cafc47512f8897b17d80ccb15470037a88e45eff868abc7c7e",
+      "transformations": []
+    },
+    {
+      "path": "zqhd-video-ai/components/h3/agents/openai.yaml",
+      "source": "zqhd-video-ai/components/h3/agents/openai.yaml",
+      "source_sha256": "bd34c6541096f24a28c67e712ed503e4992ebdcdd9bfb4eecb623b5bc0dfc336",
+      "published_sha256": "bd34c6541096f24a28c67e712ed503e4992ebdcdd9bfb4eecb623b5bc0dfc336",
+      "transformations": []
+    },
+    {
+      "path": "zqhd-video-ai/components/h3/references/base-en.txt",
+      "source": "zqhd-video-ai/components/h3/references/base-en.txt",
+      "source_sha256": "2cfebc096a6e08370f288d468d90b60f7f9bcb938f94bf090816e910e48e75fc",
+      "published_sha256": "2cfebc096a6e08370f288d468d90b60f7f9bcb938f94bf090816e910e48e75fc",
+      "transformations": []
+    },
+    {
+      "path": "zqhd-video-ai/components/h3/references/base-modes-guide.md",
+      "source": "zqhd-video-ai/components/h3/references/base-modes-guide.md",
+      "source_sha256": "f9e7cd5b0884dea072128fe4f277dcbfe1d99653b861b889e4b275cc98d32c7d",
+      "published_sha256": "f9e7cd5b0884dea072128fe4f277dcbfe1d99653b861b889e4b275cc98d32c7d",
+      "transformations": []
+    },
+    {
+      "path": "zqhd-video-ai/components/h3/references/media-preflight-and-failures.md",
+      "source": "zqhd-video-ai/components/h3/references/media-preflight-and-failures.md",
+      "source_sha256": "073346027f3cfa121bfd3289e86f40642ca1002007a517352546341c7c576089",
+      "published_sha256": "073346027f3cfa121bfd3289e86f40642ca1002007a517352546341c7c576089",
+      "transformations": []
+    },
+    {
+      "path": "zqhd-video-ai/components/h3/references/official-api.md",
+      "source": "zqhd-video-ai/components/h3/references/official-api.md",
+      "source_sha256": "20db650895304a7fe2b0c5a723e780d4c13dea1475f0b856affa501aa76cc3cf",
+      "published_sha256": "20db650895304a7fe2b0c5a723e780d4c13dea1475f0b856affa501aa76cc3cf",
+      "transformations": []
+    },
+    {
+      "path": "zqhd-video-ai/components/h3/references/product-ad-templates.md",
+      "source": "zqhd-video-ai/components/h3/references/product-ad-templates.md",
+      "source_sha256": "ffe5fe7e4ef67f332efb55a7a4040af9d49fd27d6fcf3e57b7590858970f2702",
+      "published_sha256": "ffe5fe7e4ef67f332efb55a7a4040af9d49fd27d6fcf3e57b7590858970f2702",
+      "transformations": []
+    },
+    {
+      "path": "zqhd-video-ai/components/h3/references/prompt-contract.md",
+      "source": "zqhd-video-ai/components/h3/references/prompt-contract.md",
+      "source_sha256": "5e513d7047a98f7ca1313ad3f3e21a4a4929589d7384a8cb33f06d887e77bd47",
+      "published_sha256": "5e513d7047a98f7ca1313ad3f3e21a4a4929589d7384a8cb33f06d887e77bd47",
+      "transformations": []
+    },
+    {
+      "path": "zqhd-video-ai/components/h3/references/ref-en.txt",
+      "source": "zqhd-video-ai/components/h3/references/ref-en.txt",
+      "source_sha256": "1e574f356716ad55612247ffb7bbccbcdb484ad96599d63c7dca1af186b1fab7",
+      "published_sha256": "1e574f356716ad55612247ffb7bbccbcdb484ad96599d63c7dca1af186b1fab7",
+      "transformations": []
+    },
+    {
+      "path": "zqhd-video-ai/components/h3/references/ref2va-guide.md",
+      "source": "zqhd-video-ai/components/h3/references/ref2va-guide.md",
+      "source_sha256": "117ae4df6556fe9b86b3f5358b6f99cb20ce3f1567d53928d8f9bfc087d87eca",
+      "published_sha256": "117ae4df6556fe9b86b3f5358b6f99cb20ce3f1567d53928d8f9bfc087d87eca",
+      "transformations": []
+    },
+    {
+      "path": "zqhd-video-ai/components/h3/scripts/check-upstream.sh",
+      "source": "zqhd-video-ai/components/h3/scripts/check-upstream.sh",
+      "source_sha256": "b4d2df75dab33176870342f989e16f28060957d6d4dd73eaac388f238c8321f5",
+      "published_sha256": "b4d2df75dab33176870342f989e16f28060957d6d4dd73eaac388f238c8321f5",
+      "transformations": []
+    },
+    {
+      "path": "zqhd-video-ai/components/h3/scripts/check-upstream.test.mjs",
+      "source": "zqhd-video-ai/components/h3/scripts/check-upstream.test.mjs",
+      "source_sha256": "7e1e57870c4e98f45c8582b8e0c5b2cf2c221c5741d4dc379f7eb680580c3342",
+      "published_sha256": "7e1e57870c4e98f45c8582b8e0c5b2cf2c221c5741d4dc379f7eb680580c3342",
+      "transformations": []
+    },
+    {
+      "path": "zqhd-video-ai/components/kling/guide.md",
+      "source": "zqhd-video-ai/components/kling/guide.md",
+      "source_sha256": "13d0fbeec6259af75d848a5fcbc348e146228c4bd4bdb35792b02535b2a2a6a8",
+      "published_sha256": "13d0fbeec6259af75d848a5fcbc348e146228c4bd4bdb35792b02535b2a2a6a8",
+      "transformations": []
+    },
+    {
+      "path": "zqhd-video-ai/components/seedance/guide.md",
+      "source": "zqhd-video-ai/components/seedance/guide.md",
+      "source_sha256": "eda94ee40b79319419f98b24f96c76c4c5f4ad0fbc53a0f2f74dc68e2da51b2f",
+      "published_sha256": "eda94ee40b79319419f98b24f96c76c4c5f4ad0fbc53a0f2f74dc68e2da51b2f",
+      "transformations": []
+    },
+    {
+      "path": "zqhd-video-ai/components/seedance/agents/openai.yaml",
+      "source": "zqhd-video-ai/components/seedance/agents/openai.yaml",
+      "source_sha256": "69eac9f6cd48d3d78b10d637f993c224771daf44efeac73bd7e7070e1068894d",
+      "published_sha256": "69eac9f6cd48d3d78b10d637f993c224771daf44efeac73bd7e7070e1068894d",
+      "transformations": []
+    },
+    {
+      "path": "zqhd-video-ai/components/seedance/references/automotive.md",
+      "source": "zqhd-video-ai/components/seedance/references/automotive.md",
+      "source_sha256": "3cbafe59d7d7bcda63ec6210f5cc2cb3675137e54df2a4eb7da3a82e0ab29c79",
+      "published_sha256": "3cbafe59d7d7bcda63ec6210f5cc2cb3675137e54df2a4eb7da3a82e0ab29c79",
+      "transformations": []
+    },
+    {
+      "path": "zqhd-video-ai/components/seedance/references/seedance-20-boundary.md",
+      "source": "zqhd-video-ai/components/seedance/references/seedance-20-boundary.md",
+      "source_sha256": "a3a1d192149bd8880f61339de589d978d961688cb6defb78f4215993e0044970",
+      "published_sha256": "a3a1d192149bd8880f61339de589d978d961688cb6defb78f4215993e0044970",
+      "transformations": []
+    },
+    {
+      "path": "zqhd-video-ai/components/seedance/references/seedance-25-boundary.md",
+      "source": "zqhd-video-ai/components/seedance/references/seedance-25-boundary.md",
+      "source_sha256": "6f8a5013d4c14a2cff5bfc003c8e2d93ffc7a419d637ccca8aadc0a5e065bb9e",
+      "published_sha256": "6f8a5013d4c14a2cff5bfc003c8e2d93ffc7a419d637ccca8aadc0a5e065bb9e",
+      "transformations": []
+    },
+    {
+      "path": "zqhd-video-ai/components/wan/guide.md",
+      "source": "zqhd-video-ai/components/wan/guide.md",
+      "source_sha256": "ccc5ef3f4940970d2c474e74c59ddf4cc47e7bbd9b3ca1a25cc4a824108de664",
+      "published_sha256": "ccc5ef3f4940970d2c474e74c59ddf4cc47e7bbd9b3ca1a25cc4a824108de664",
+      "transformations": []
+    },
+    {
+      "path": "zqhd-video-ai/components/workflow/guide.md",
+      "source": "zqhd-video-ai/components/workflow/guide.md",
+      "source_sha256": "9479d8de683ced1ebe4fa3c62d671199892bab668e23c2be98a4d7e8eee5976c",
+      "published_sha256": "9479d8de683ced1ebe4fa3c62d671199892bab668e23c2be98a4d7e8eee5976c",
+      "transformations": []
+    },
+    {
+      "path": "zqhd-video-ai/components/workflow/references/direction.md",
+      "source": "zqhd-video-ai/components/workflow/references/direction.md",
+      "source_sha256": "d278d0b7c6c10cc7c251f6e4b9cd37a9be401989a0a5dc455d7e893591ea506c",
+      "published_sha256": "d278d0b7c6c10cc7c251f6e4b9cd37a9be401989a0a5dc455d7e893591ea506c",
+      "transformations": []
+    },
+    {
+      "path": "zqhd-video-ai/components/workflow/references/gates.md",
+      "source": "zqhd-video-ai/components/workflow/references/gates.md",
+      "source_sha256": "b8c4bfcd9c254144ef0ea3f3bd1eb79c48235d27b4761c6b50e31f266fb94f0f",
+      "published_sha256": "b8c4bfcd9c254144ef0ea3f3bd1eb79c48235d27b4761c6b50e31f266fb94f0f",
+      "transformations": []
+    },
+    {
+      "path": "zqhd-video-ai/components/workflow/references/prompt-authoring-and-limits.md",
+      "source": "zqhd-video-ai/components/workflow/references/prompt-authoring-and-limits.md",
+      "source_sha256": "730ba6466d55c9e36b8281141c5d76b0c1d61eb62d94591d9c432b974af8b896",
+      "published_sha256": "730ba6466d55c9e36b8281141c5d76b0c1d61eb62d94591d9c432b974af8b896",
+      "transformations": []
+    },
+    {
+      "path": "zqhd-video-ai/components/workflow/references/return-delivery.md",
+      "source": "zqhd-video-ai/components/workflow/references/return-delivery.md",
+      "source_sha256": "c57cf946fbed5dab7e8213c9be38cc1540ff1670a7bb46d35f52a5666e537699",
+      "published_sha256": "c57cf946fbed5dab7e8213c9be38cc1540ff1670a7bb46d35f52a5666e537699",
+      "transformations": []
+    },
+    {
+      "path": "zqhd-video-ai/components/workflow/references/stages.md",
+      "source": "zqhd-video-ai/components/workflow/references/stages.md",
+      "source_sha256": "508b05a0076ad4e7da53a75975e1b3c0c9524b08c586125c1f2038bd8005d990",
+      "published_sha256": "508b05a0076ad4e7da53a75975e1b3c0c9524b08c586125c1f2038bd8005d990",
+      "transformations": []
+    },
+    {
+      "path": "zqhd-video-ai/components/workflow/references/subject-replacement.md",
+      "source": "zqhd-video-ai/components/workflow/references/subject-replacement.md",
+      "source_sha256": "db407bd0d38155c3ea2ae1202fca557e4cd10d0f3983a7fa5d6e45f9de4de434",
+      "published_sha256": "db407bd0d38155c3ea2ae1202fca557e4cd10d0f3983a7fa5d6e45f9de4de434",
+      "transformations": []
+    },
+    {
+      "path": "zqhd-video-ai/references/vehicle-core.md",
+      "source": "zqhd-video-ai/references/vehicle-core.md",
+      "source_sha256": "9e33cc644d55e2aa33649bf2365b18d2a1c25a9c12111e6d6cb3b9d886f295e1",
+      "published_sha256": "9e33cc644d55e2aa33649bf2365b18d2a1c25a9c12111e6d6cb3b9d886f295e1",
+      "transformations": []
+    },
+    {
+      "path": "zqhd-video-ai/references/h3/base-en.txt",
+      "source": "zqhd-video-ai/components/h3/references/base-en.txt",
+      "source_sha256": "2cfebc096a6e08370f288d468d90b60f7f9bcb938f94bf090816e910e48e75fc",
+      "published_sha256": "2cfebc096a6e08370f288d468d90b60f7f9bcb938f94bf090816e910e48e75fc",
+      "transformations": [
+        "materialized_internal_alias"
+      ]
+    },
+    {
+      "path": "zqhd-video-ai/references/h3/base-modes-guide.md",
+      "source": "zqhd-video-ai/components/h3/references/base-modes-guide.md",
+      "source_sha256": "f9e7cd5b0884dea072128fe4f277dcbfe1d99653b861b889e4b275cc98d32c7d",
+      "published_sha256": "f9e7cd5b0884dea072128fe4f277dcbfe1d99653b861b889e4b275cc98d32c7d",
+      "transformations": [
+        "materialized_internal_alias"
+      ]
+    },
+    {
+      "path": "zqhd-video-ai/references/h3/media-preflight-and-failures.md",
+      "source": "zqhd-video-ai/components/h3/references/media-preflight-and-failures.md",
+      "source_sha256": "073346027f3cfa121bfd3289e86f40642ca1002007a517352546341c7c576089",
+      "published_sha256": "310f0e47c7b9e36c66f159a04ec97473ea6981bfa041f4461b493d5f2fd835ec",
+      "transformations": [
+        "materialized_internal_alias",
+        "rebase_relative_links_from_source_to_materialized_location"
+      ]
+    },
+    {
+      "path": "zqhd-video-ai/references/h3/official-api.md",
+      "source": "zqhd-video-ai/components/h3/references/official-api.md",
+      "source_sha256": "20db650895304a7fe2b0c5a723e780d4c13dea1475f0b856affa501aa76cc3cf",
+      "published_sha256": "e2261f4c299c3da5a574fa21c75240da858c45b3cc55e281c01614ade14207da",
+      "transformations": [
+        "materialized_internal_alias",
+        "rebase_relative_links_from_source_to_materialized_location"
+      ]
+    },
+    {
+      "path": "zqhd-video-ai/references/h3/product-ad-templates.md",
+      "source": "zqhd-video-ai/components/h3/references/product-ad-templates.md",
+      "source_sha256": "ffe5fe7e4ef67f332efb55a7a4040af9d49fd27d6fcf3e57b7590858970f2702",
+      "published_sha256": "ffe5fe7e4ef67f332efb55a7a4040af9d49fd27d6fcf3e57b7590858970f2702",
+      "transformations": [
+        "materialized_internal_alias"
+      ]
+    },
+    {
+      "path": "zqhd-video-ai/references/h3/prompt-contract.md",
+      "source": "zqhd-video-ai/components/h3/references/prompt-contract.md",
+      "source_sha256": "5e513d7047a98f7ca1313ad3f3e21a4a4929589d7384a8cb33f06d887e77bd47",
+      "published_sha256": "56dcbe4db2b3b221c8bba9565d34cdb9a303e365a110139677fe00b8ec08e0d3",
+      "transformations": [
+        "materialized_internal_alias",
+        "rebase_relative_links_from_source_to_materialized_location"
+      ]
+    },
+    {
+      "path": "zqhd-video-ai/references/h3/ref-en.txt",
+      "source": "zqhd-video-ai/components/h3/references/ref-en.txt",
+      "source_sha256": "1e574f356716ad55612247ffb7bbccbcdb484ad96599d63c7dca1af186b1fab7",
+      "published_sha256": "1e574f356716ad55612247ffb7bbccbcdb484ad96599d63c7dca1af186b1fab7",
+      "transformations": [
+        "materialized_internal_alias"
+      ]
+    },
+    {
+      "path": "zqhd-video-ai/references/h3/ref2va-guide.md",
+      "source": "zqhd-video-ai/components/h3/references/ref2va-guide.md",
+      "source_sha256": "117ae4df6556fe9b86b3f5358b6f99cb20ce3f1567d53928d8f9bfc087d87eca",
+      "published_sha256": "117ae4df6556fe9b86b3f5358b6f99cb20ce3f1567d53928d8f9bfc087d87eca",
+      "transformations": [
+        "materialized_internal_alias"
+      ]
+    },
+    {
+      "path": "zqhd-video-ai/references/seedance/automotive.md",
+      "source": "zqhd-video-ai/components/seedance/references/automotive.md",
+      "source_sha256": "3cbafe59d7d7bcda63ec6210f5cc2cb3675137e54df2a4eb7da3a82e0ab29c79",
+      "published_sha256": "4e31f477cb8803863cdcb77fea23a96df037e099f64c810955bc2622ff46e10b",
+      "transformations": [
+        "materialized_internal_alias",
+        "rebase_relative_links_from_source_to_materialized_location"
+      ]
+    },
+    {
+      "path": "zqhd-video-ai/references/seedance/seedance-20-boundary.md",
+      "source": "zqhd-video-ai/components/seedance/references/seedance-20-boundary.md",
+      "source_sha256": "a3a1d192149bd8880f61339de589d978d961688cb6defb78f4215993e0044970",
+      "published_sha256": "75359cba4ca552637531b617baa17631c588f9c9c304988baf5ab00a80142895",
+      "transformations": [
+        "materialized_internal_alias",
+        "rebase_relative_links_from_source_to_materialized_location"
+      ]
+    },
+    {
+      "path": "zqhd-video-ai/references/seedance/seedance-25-boundary.md",
+      "source": "zqhd-video-ai/components/seedance/references/seedance-25-boundary.md",
+      "source_sha256": "6f8a5013d4c14a2cff5bfc003c8e2d93ffc7a419d637ccca8aadc0a5e065bb9e",
+      "published_sha256": "faa22388bd028f2fc2e03fc223dcfc6835b43d0544ee461c4b4ec44a914c898d",
+      "transformations": [
+        "materialized_internal_alias",
+        "rebase_relative_links_from_source_to_materialized_location"
+      ]
+    },
+    {
+      "path": "zqhd-video-ai/references/workflow/direction.md",
+      "source": "zqhd-video-ai/components/workflow/references/direction.md",
+      "source_sha256": "d278d0b7c6c10cc7c251f6e4b9cd37a9be401989a0a5dc455d7e893591ea506c",
+      "published_sha256": "d278d0b7c6c10cc7c251f6e4b9cd37a9be401989a0a5dc455d7e893591ea506c",
+      "transformations": [
+        "materialized_internal_alias"
+      ]
+    },
+    {
+      "path": "zqhd-video-ai/references/workflow/gates.md",
+      "source": "zqhd-video-ai/components/workflow/references/gates.md",
+      "source_sha256": "b8c4bfcd9c254144ef0ea3f3bd1eb79c48235d27b4761c6b50e31f266fb94f0f",
+      "published_sha256": "9e746e8d4f483d73c2f622c26db1c7135692518c690f6d0a3c4837d00b6197d8",
+      "transformations": [
+        "materialized_internal_alias",
+        "rebase_relative_links_from_source_to_materialized_location"
+      ]
+    },
+    {
+      "path": "zqhd-video-ai/references/workflow/prompt-authoring-and-limits.md",
+      "source": "zqhd-video-ai/components/workflow/references/prompt-authoring-and-limits.md",
+      "source_sha256": "730ba6466d55c9e36b8281141c5d76b0c1d61eb62d94591d9c432b974af8b896",
+      "published_sha256": "d96dca5f3744ffb2e81acbdf851479ef554448d149d0c38596c0f28d54be76a9",
+      "transformations": [
+        "materialized_internal_alias",
+        "rebase_relative_links_from_source_to_materialized_location"
+      ]
+    },
+    {
+      "path": "zqhd-video-ai/references/workflow/return-delivery.md",
+      "source": "zqhd-video-ai/components/workflow/references/return-delivery.md",
+      "source_sha256": "c57cf946fbed5dab7e8213c9be38cc1540ff1670a7bb46d35f52a5666e537699",
+      "published_sha256": "c57cf946fbed5dab7e8213c9be38cc1540ff1670a7bb46d35f52a5666e537699",
+      "transformations": [
+        "materialized_internal_alias"
+      ]
+    },
+    {
+      "path": "zqhd-video-ai/references/workflow/stages.md",
+      "source": "zqhd-video-ai/components/workflow/references/stages.md",
+      "source_sha256": "508b05a0076ad4e7da53a75975e1b3c0c9524b08c586125c1f2038bd8005d990",
+      "published_sha256": "f5a9b4b38f400b041de461d96a8b4496dfd50d8544d7279357efdc95e04d669f",
+      "transformations": [
+        "materialized_internal_alias",
+        "rebase_relative_links_from_source_to_materialized_location"
+      ]
+    },
+    {
+      "path": "zqhd-video-ai/references/workflow/subject-replacement.md",
+      "source": "zqhd-video-ai/components/workflow/references/subject-replacement.md",
+      "source_sha256": "db407bd0d38155c3ea2ae1202fca557e4cd10d0f3983a7fa5d6e45f9de4de434",
+      "published_sha256": "a777a76d2eeb6c22420c22f90f54adfeb28476eb2cb6544d704ec5fc4af390c4",
+      "transformations": [
+        "materialized_internal_alias",
+        "rebase_relative_links_from_source_to_materialized_location"
+      ]
+    },
+    {
+      "path": "zqhd-video-ai/scripts/check-upstream.sh",
+      "source": "zqhd-video-ai/scripts/check-upstream.sh",
+      "source_sha256": "bc8e4cebff9040ba949c3dcc2e308451485d5ec7ad62fb55dccea248827041f2",
+      "published_sha256": "bc8e4cebff9040ba949c3dcc2e308451485d5ec7ad62fb55dccea248827041f2",
+      "transformations": []
+    },
+    {
+      "path": "zqhd-car-modelvideo/SKILL.md",
+      "source": "zqhd-car-modelvideo/SKILL.md",
+      "source_sha256": "6891bef0c4b85a40afa21aaef58fc1d2f97490cf4a8001a9ac5080b9e2d95965",
+      "published_sha256": "6891bef0c4b85a40afa21aaef58fc1d2f97490cf4a8001a9ac5080b9e2d95965",
+      "transformations": []
+    },
+    {
+      "path": "zqhd-car-modelvideo/agents/openai.yaml",
+      "source": "zqhd-car-modelvideo/agents/openai.yaml",
+      "source_sha256": "89c404c9533c8cd9d72b0dbbba1a9657b8cf826a83a19d5b49ab361760950cba",
+      "published_sha256": "89c404c9533c8cd9d72b0dbbba1a9657b8cf826a83a19d5b49ab361760950cba",
+      "transformations": []
+    },
+    {
+      "path": "zqhd-car-modelvideo/references/generation-and-qa.md",
+      "source": "zqhd-car-modelvideo/references/generation-and-qa.md",
+      "source_sha256": "19da2d4f8b41ce6e4987957abfa5f75de106165120742abc98d362381def3367",
+      "published_sha256": "19da2d4f8b41ce6e4987957abfa5f75de106165120742abc98d362381def3367",
+      "transformations": []
+    },
+    {
+      "path": "zqhd-car-modelvideo/references/manifest.md",
+      "source": "zqhd-car-modelvideo/references/manifest.md",
+      "source_sha256": "cf0f186e18b093c2c5e3e43aeaa36ca237319d464475e729640543639a216a21",
+      "published_sha256": "cf0f186e18b093c2c5e3e43aeaa36ca237319d464475e729640543639a216a21",
+      "transformations": []
+    },
+    {
+      "path": "zqhd-car-modelvideo/references/prompt-and-qa.md",
+      "source": "zqhd-car-modelvideo/references/prompt-and-qa.md",
+      "source_sha256": "75b7d8242442bd6ea14e26fff90e4093532c0eff4bf4a99e68b048f2cf887a8f",
+      "published_sha256": "75b7d8242442bd6ea14e26fff90e4093532c0eff4bf4a99e68b048f2cf887a8f",
+      "transformations": []
+    },
+    {
+      "path": "zqhd-car-modelvideo/references/vehicle-boards.md",
+      "source": "zqhd-car-modelvideo/references/vehicle-boards.md",
+      "source_sha256": "cd83e3fde2ed11e7233183e12a6240867e933b4edc1b6b4ab99bd4f8cbac83f4",
+      "published_sha256": "cd83e3fde2ed11e7233183e12a6240867e933b4edc1b6b4ab99bd4f8cbac83f4",
+      "transformations": []
+    },
+    {
+      "path": "zqhd-car-modelvideo/scripts/build_boards.py",
+      "source": "zqhd-car-modelvideo/scripts/build_boards.py",
+      "source_sha256": "b7238f72c1469cb5676a48e28a11ce8c85008347da4655f88118857eebf58bba",
+      "published_sha256": "b7238f72c1469cb5676a48e28a11ce8c85008347da4655f88118857eebf58bba",
+      "transformations": []
+    },
+    {
+      "path": "zqhd-car-modelvideo/scripts/export_png.cjs",
+      "source": "zqhd-car-modelvideo/scripts/export_png.cjs",
+      "source_sha256": "e90521175d986f63627dfd58d71788d8693dc6d53480266a94b62f5f5caa2256",
+      "published_sha256": "e90521175d986f63627dfd58d71788d8693dc6d53480266a94b62f5f5caa2256",
+      "transformations": []
+    },
+    {
+      "path": "zqhd-car-modelvideo/tests/test_build_boards.py",
+      "source": "zqhd-car-modelvideo/tests/test_build_boards.py",
+      "source_sha256": "3fbf10f6b2396d1e7742393767d7ed319b9295c9ea3d80bd690db15beb3b950a",
+      "published_sha256": "3fbf10f6b2396d1e7742393767d7ed319b9295c9ea3d80bd690db15beb3b950a",
+      "transformations": []
+    },
+    {
+      "path": "seedance-20/SKILL.md",
+      "source": "seedance-20/SKILL.md",
+      "source_sha256": "011b6081845396b84495f8e3bf642299048fbc6b2393cacb5e6dbf435c3aee65",
+      "published_sha256": "011b6081845396b84495f8e3bf642299048fbc6b2393cacb5e6dbf435c3aee65",
+      "transformations": []
+    },
+    {
+      "path": "seedance-20/agents/openai.yaml",
+      "source": "seedance-20/agents/openai.yaml",
+      "source_sha256": "c96fa51c2d27225b3f8d84b45b130f15a656eb4d2a708b7534a9851a0e5eefec",
+      "published_sha256": "c96fa51c2d27225b3f8d84b45b130f15a656eb4d2a708b7534a9851a0e5eefec",
+      "transformations": []
+    },
+    {
+      "path": "seedance-20/references/automotive.md",
+      "source": "seedance-20/references/automotive.md",
+      "source_sha256": "1eb4ec442620c37f7da2d9a010241f88d8e32c953a21af7779ed1f163c3b99b5",
+      "published_sha256": "1eb4ec442620c37f7da2d9a010241f88d8e32c953a21af7779ed1f163c3b99b5",
+      "transformations": []
+    },
+    {
+      "path": "seedance-20/references/prompt-writing.md",
+      "source": "seedance-20/references/prompt-writing.md",
+      "source_sha256": "c5a7a490ac6a8114375be80bd0a9aa16b89f25cc823deb66ae0ed37f56fa8bce",
+      "published_sha256": "c5a7a490ac6a8114375be80bd0a9aa16b89f25cc823deb66ae0ed37f56fa8bce",
+      "transformations": []
+    },
+    {
+      "path": "seedance-20/references/sequence.md",
+      "source": "seedance-20/references/sequence.md",
+      "source_sha256": "447dd2af142533604dae9e85d926447edc2eded52987f27b90447ae9655e1ba5",
+      "published_sha256": "447dd2af142533604dae9e85d926447edc2eded52987f27b90447ae9655e1ba5",
+      "transformations": []
+    },
+    {
+      "path": "seedance-20/references/sources.md",
+      "source": "seedance-20/references/sources.md",
+      "source_sha256": "67e127f75925e4e10ab9988ada133d5e676b4bfc2a0bfc4fe7edd4271c9c260d",
+      "published_sha256": "67e127f75925e4e10ab9988ada133d5e676b4bfc2a0bfc4fe7edd4271c9c260d",
+      "transformations": []
+    },
+    {
+      "path": "seedance-25/SKILL.md",
+      "source": "seedance-25/SKILL.md",
+      "source_sha256": "9f49f049591523d13f5b23cd1289a57670d95e004112f2632d5bb5fce906dc10",
+      "published_sha256": "9f49f049591523d13f5b23cd1289a57670d95e004112f2632d5bb5fce906dc10",
+      "transformations": []
+    },
+    {
+      "path": "seedance-25/agents/openai.yaml",
+      "source": "seedance-25/agents/openai.yaml",
+      "source_sha256": "25c0712fa7e3093e828b4930910388878d16c41020a25a32574d7e072eb6ff44",
+      "published_sha256": "25c0712fa7e3093e828b4930910388878d16c41020a25a32574d7e072eb6ff44",
+      "transformations": []
+    },
+    {
+      "path": "seedance-25/references/automotive.md",
+      "source": "seedance-25/references/automotive.md",
+      "source_sha256": "d514fbce2e621582aa9d908e52e9c18637511a67bb598f5befce8475837a8d00",
+      "published_sha256": "d514fbce2e621582aa9d908e52e9c18637511a67bb598f5befce8475837a8d00",
+      "transformations": []
+    },
+    {
+      "path": "seedance-25/references/prompt-writing.md",
+      "source": "seedance-25/references/prompt-writing.md",
+      "source_sha256": "1abc929c086fd3f4fc4ff4980c054d7678b809f9324947a43a7e996cdf084c49",
+      "published_sha256": "1abc929c086fd3f4fc4ff4980c054d7678b809f9324947a43a7e996cdf084c49",
+      "transformations": []
+    },
+    {
+      "path": "seedance-25/references/sources.md",
+      "source": "seedance-25/references/sources.md",
+      "source_sha256": "da5deaadb94e33f899fc7ae027527a5a5e8535274f36852077a1996fe4c9b70b",
+      "published_sha256": "da5deaadb94e33f899fc7ae027527a5a5e8535274f36852077a1996fe4c9b70b",
+      "transformations": []
+    },
+    {
+      "path": "seedance-25/references/timeline-edit.md",
+      "source": "seedance-25/references/timeline-edit.md",
+      "source_sha256": "7f8382a79e4ca3cb287e4c18045c4f1c37e00b65360f69f41e656df847783dd7",
+      "published_sha256": "7f8382a79e4ca3cb287e4c18045c4f1c37e00b65360f69f41e656df847783dd7",
+      "transformations": []
+    }
+  ],
+  "notes": [
+    "内部链接别名固化为普通文件并记录唯一来源",
+    "执行工具仅按已安装技能名称引用，不随包发布",
+    "README 与本清单为发布说明；不含本机绝对路径"
+  ]
+}

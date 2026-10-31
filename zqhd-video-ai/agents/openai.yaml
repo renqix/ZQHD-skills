@@ -1,0 +1,4 @@
+interface:
+  display_name: "zqhd-video-ai · AI 视频与提示词编排"
+  short_description: "按任务编排视频或提示词，支持 H3、Seedance、Wan 3.0 与 Kling 4.0"
+  default_prompt: "使用 $zqhd-video-ai，先按我的目标判断走完整视频流程还是单条提示词；使用 H3 时先定 T2VA/I2VA/FL2VA/L2VA/Ref2VA 模式，使用 Seedance 时先定 2.0 或 2.5；Wan 3.0 与 Kling 4.0 按实际平台区分参考、关键帧和编辑，再按对应规范交付可直接复制的完整提示词。"
